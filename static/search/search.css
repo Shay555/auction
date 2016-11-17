@@ -1,0 +1,68 @@
+
+html, body {
+	min-width:300px;
+	height:auto;
+	background:transparent;
+}
+
+body {
+	overflow:hidden;
+}
+#search-results{
+	padding:20px 10px 100px 5px;
+	overflow:hidden;
+}
+#search-results iframe html{
+	border:none;
+}
+#search-results iframe {
+	min-width:300px;
+}
+
+h4{
+	padding-bottom: 10px;
+	margin: 0;
+}
+ol.search_list {
+	margin-left: 0;
+    padding-left: 10px;
+	list-style-type:none;
+	counter-reset: ol;
+    padding-top: 20px;
+}
+ol.search_list li:before {
+content: counter(ol) ".";
+counter-increment: ol;
+float:left;
+display:block;
+width:20px;
+text-align:right;	
+padding-right:10px;
+margin:0px 0px 0 -30px
+}
+ol.search_list li {
+	padding-bottom:40px;
+	margin-left:15px;
+}
+span.match {
+	color:#ffd213;
+	display:block;
+	font-weight:bold;
+}
+span.search {
+	color:#ffd213;
+    font-style:italic;
+
+}
+.search_link{
+    font:500 20px/1em 'Raleway';
+    color:#333;
+    margin:0;
+    position:relative;
+    top:-5px;
+}
+.search_link:hover{
+    color:#ffd213;
+	text-decoration: none;
+}
+
