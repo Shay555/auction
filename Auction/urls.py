@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^about/$', views.get_index_1, name='about'),
     url(r'^sell/$', views.get_Sell, name='sell'),
     url(r'^buy/$', views.get_Buy, name='buy'),
-    url(r'^blog/$', views.get_Blog, name='blog'),
+    #url(r'^blog/$', views.get_Blog, name='blog'),
     url(r'^contact/$',views.get_Contact, name='contact'),
     url(r'^privacy/$',views.get_Privacy, name='privacy'),
     url(r'^admin/', admin.site.urls),

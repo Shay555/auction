@@ -14,8 +14,8 @@ def get_Sell(request):
 def get_Buy(request):
     return render(request,'Buy.html')
 
-def get_Blog(request):
-    return render(request, 'blogposts.html')
+#def get_Blog(request):
+ #   return render(request, 'blogposts.html' )
 
 def get_Contact(request):
     return render(request, 'Contact-Us.html')
