@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 
 
@@ -17,6 +18,10 @@
                         <p><button class="btn btn-default" onclick="location.href='/blog'">Back to Blog</button></p>
                         <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
                     </div>
+
+                    {% load disqus_tags %}
+                    {% set_disqus_title post.title %}
+                    {% disqus_show_comments %}
                 </div>
             </div>
         </div>
