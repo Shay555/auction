@@ -16,15 +16,20 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from Hello import views
+from blog import urls as blog_urls
+
 
 urlpatterns = [
     url(r'^home/$', views.get_home, name='home'),
     url(r'^about/$', views.get_index_1, name='about'),
     url(r'^sell/$', views.get_Sell, name='sell'),
     url(r'^buy/$', views.get_Buy, name='buy'),
-    #url(r'^blog/$', views.get_Blog, name='blog'),
+    url(r'^blog/', include(blog_urls)),
     url(r'^contact/$',views.get_Contact, name='contact'),
     url(r'^privacy/$',views.get_Privacy, name='privacy'),
+    url(r'^product/$',views.get_Products, name= 'products' ),
     url(r'^admin/', admin.site.urls),
-    url(r'', include('blog.urls')),
+    #url(r'', include('blog.urls')),
+
+
 ]

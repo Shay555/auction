@@ -14,11 +14,11 @@ def get_Sell(request):
 def get_Buy(request):
     return render(request,'Buy.html')
 
-#def get_Blog(request):
- #   return render(request, 'blogposts.html' )
-
 def get_Contact(request):
     return render(request, 'Contact-Us.html')
 
 def get_Privacy(request):
     return render(request, 'Privacy-Policy.html')
+
+def get_Products(request):
+    return render(request, 'products.html')

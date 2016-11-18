@@ -4,7 +4,7 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class POST(models.Model):
+class Post(models.Model):
     """
     # author is linked to a registered
     # user in the 'auth user' table.
