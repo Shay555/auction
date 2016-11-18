@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.staticfiles import views as static_views
 from Hello import views
 from blog import urls as blog_urls
 
@@ -30,6 +31,6 @@ urlpatterns = [
     url(r'^product/$',views.get_Products, name= 'products' ),
     url(r'^admin/', admin.site.urls),
     #url(r'', include('blog.urls')),
-
+    url(r'^static/(?P<path>.*)$', static_views.serve),
 
 ]
