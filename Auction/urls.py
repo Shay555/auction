@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.static import serve
+from .settings import MEDIA_ROOT
 from django.contrib.staticfiles import views as static_views
 from Hello import views
 from blog import urls as blog_urls
+
 
 
 urlpatterns = [
@@ -32,5 +35,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'', include('blog.urls')),
     url(r'^static/(?P<path>.*)$', static_views.serve),
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 
 ]
