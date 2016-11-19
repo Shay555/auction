@@ -18,6 +18,9 @@
                         <p><button class="btn btn-default" onclick="location.href={{ post.id }}">Read More</button></p>
                         <p>{{ post.published_date }} | <strong>Views</strong> {{ post.views }} | <strong>Tag</strong> {{ post.tag }}</p>
                     </div>
+                    {% comment %}
+                    <p><button class="btn btn-primary" onclick="location.href='{% url 'new_post' %}'">New Post</button></p>
+                    {% endcomment %}
                 </div>
             </div>
         </div>
