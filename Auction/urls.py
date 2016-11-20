@@ -23,8 +23,9 @@ from blog import urls as blog_urls
 
 
 
+
 urlpatterns = [
-    url(r'^home/$', views.get_home, name='home'),
+    url(r'^$', views.get_home, name='home'),
     url(r'^about/$', views.get_index_1, name='about'),
     url(r'^sell/$', views.get_Sell, name='sell'),
     url(r'^buy/$', views.get_Buy, name='buy'),

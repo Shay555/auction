@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'home',
     'django.contrib.sites',
     'disqus',
-    'django_forms_bootstrap'
+    'django_forms_bootstrap',
+
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,6 @@ DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+

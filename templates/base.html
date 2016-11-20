@@ -47,11 +47,11 @@
   </div>
   <![endif]-->
 
-    <style>
-        .thumb-box1 {
-            background-image: url(../static/img/white.png);
-        }
-    </style>
+{#    <style>#}
+{#        .thumb-box1 {#}
+{#            background-image: url(../static/img/white.png);#}
+{#        }#}
+{#    </style>#}
 
 
 
@@ -67,7 +67,7 @@
                     <p class="title2">Hours:  8am-8pm PST M-Th;   6am-3pm PST Fri</p>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                    <a href="#" class="btn-default btn1">Register</a>
+                    <a href="/register/" class="btn-default btn1">Register</a>
                     <a href="#" class="btn-default btn1">Sign In</a>
                 </div>
             </div>
@@ -103,11 +103,12 @@
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="/contact/">Contact Us</a></li>
                 <li><a href="/privacy/">Privacy Policy</a></li>
+
             </ul>
         </nav>
     </div>
 </header>
-<h1>Marklin Train Blog</h1>
+
 {% block content %}
 {% endblock %}
 
@@ -127,6 +128,8 @@
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-body">
+                    <h1>Marklin Train Blog</h1>
+
                     <!--blog entries-->
 
                     <!--blog entries-->
@@ -183,9 +186,11 @@
             <p class="privacy">Online Auction &copy; <em id="copyright-year"></em>. <a href="Privacy-Policy.html">Privacy Policy</a></p>
         </div>
     </div>
+
   <!-- {%FOOTER_LINK} -->
 </footer>
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/tm-scripts.js"></script>
 </body>
 </html>
+
