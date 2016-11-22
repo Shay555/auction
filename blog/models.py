@@ -10,7 +10,7 @@ class Post(models.Model):
     # user in the 'auth user' table.
     """
 
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('accounts.User')
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)

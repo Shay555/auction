@@ -20,7 +20,7 @@ from .settings import MEDIA_ROOT
 from django.contrib.staticfiles import views as static_views
 from Hello import views
 from blog import urls as blog_urls
-
+#from accounts import urls
 
 
 
@@ -37,5 +37,6 @@ urlpatterns = [
     #url(r'', include('blog.urls')),
     url(r'^static/(?P<path>.*)$', static_views.serve),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'', include('accounts.urls'))
 
 ]
