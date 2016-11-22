@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'disqus',
     'accounts',
-    'django_forms_bootstrap'
+    'django_forms_bootstrap',
+    'sell',
 
 ]
 
