@@ -8,12 +8,20 @@ class Sell (models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
     published_date = models.DateTimeField(default=timezone.now)
+    views = models.IntegerField(default=0)
+    tag = models.CharField(max_length=30, blank=True, null=True)
     image = models.ImageField(upload_to='images', blank=True, null=True)
     current_bid = models.IntegerField(default=0)
     end_date = models.DateTimeField
     #current_high_bid = models.IntegerField
 
 
-    def __str__(self):
-        return self.save()
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+
+
+    def __unicode__(self):
+        return self.title
 

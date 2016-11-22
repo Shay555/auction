@@ -20,6 +20,7 @@ from .settings import MEDIA_ROOT
 from django.contrib.staticfiles import views as static_views
 from Hello import views
 from blog import urls as blog_urls
+#from sell import urls as sell_urls
 #from accounts import urls
 
 
@@ -27,7 +28,7 @@ from blog import urls as blog_urls
 urlpatterns = [
     url(r'^$', views.get_home, name='home'),
     url(r'^about/$', views.get_index_1, name='about'),
-    url(r'^sell/$', views.get_Sell, name='sell'),
+    #url(r'^sell/$', views.get_Sell, name='sell'),
     url(r'^buy/$', views.get_Buy, name='buy'),
     url(r'^blog/', include(blog_urls)),
     url(r'^contact/$',views.get_Contact, name='contact'),
@@ -37,6 +38,7 @@ urlpatterns = [
     #url(r'', include('blog.urls')),
     url(r'^static/(?P<path>.*)$', static_views.serve),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
-    url(r'', include('accounts.urls'))
+    url(r'', include('accounts.urls')),
+    url(r'', include('sell.urls')),
 
 ]
