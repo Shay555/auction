@@ -30,3 +30,5 @@ def new_post(request):
     return render(request, 'SellItemForm.html', {'form' : form})
 
 
+# def new_bid(request):
+

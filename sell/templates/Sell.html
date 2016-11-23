@@ -197,6 +197,7 @@
 
   <button class="btn btn-default, list" onclick="location.href='{% url 'new_post' %}'">List an Item</button>
 
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -221,9 +222,10 @@
                     <td>{{ sell.published_date }}</td>
                     <td>{{ sell.views }}</td>
                     <td>{{ sell.current_bid }}</td>
-                    <td><button>Submit Bid</button></td>
+                    <td><button> Submit Bid</button></td>
                     {#<td>{{ sell.end_date }}</td>#}
                 </tr>
+
 {#                 <p><button class="btn btn-default" onclick="location.href={{ sell.id }}">Make a bid</button></p>#}
            {% endfor %}
         </tbody>

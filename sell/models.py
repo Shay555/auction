@@ -28,3 +28,14 @@ class Sell (models.Model):
     def __str__(self):
         return self.title
 
+
+class Bid (models.Model):
+    author = models.ForeignKey('accounts.User')
+    title = models.ForeignKey(Sell)
+    description = models.ForeignKey
+    amount = models.IntegerField
+    bid_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+

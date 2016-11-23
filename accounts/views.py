@@ -4,7 +4,9 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
-@login_required(login_url='/login/')
+import logging
+log = logging.getLogger(__name__)
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -29,11 +31,13 @@ def register(request):
 
     return render(request, 'register.html', args)
 
+@login_required(login_url='/login/')
 def profile(request):
     return render(request, 'profile.html')
 
 
 def login(request):
+    log.info("Handling login %s request", request.method)
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():
@@ -53,3 +57,9 @@ def login(request):
     args = {'form': form}
     args.update(csrf(request))
     return render(request, 'login.html', args)
+
+def logout(request):
+    log.info("Handling logout %s request", request.method)
+    auth.logout(request)
+    messages.success(request, 'You have successfully logged out')
+    return redirect(reverse('index'))
