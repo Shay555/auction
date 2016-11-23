@@ -138,41 +138,94 @@
 {#{% endblock %}#}
 {#</body>#}
 {#</html>#}
+{#{% extends "base.html" %}#}
+{# {% load staticfiles %}#}
+{#{% block content %}#}
+{##}
+{##}
+{#
+{##}
+
+{##}
+{#    {% for sell in sell %}#}
+{##}
+{##}
+{##}
+{#        <div class="row">#}
+{#            <hr>#}
+{##}
+{#            <div class="col-md-2 col-sm-3 text-center">#}
+{#                <a class="story-img" href="#">#}
+{#                    <img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md-4 col-sm-9">#}
+{#                <h3>{{ sell.title }}</h3>#}
+{#                <div class="row">#}
+{#                    <div class="col-xs-9">#}
+{#                        <p>{{ sell.content }}</p>#}
+{#
+{#                        <p>{{ sell.published_date }} | <strong>Views</strong> {{ sell.views }} | <strong>Tag</strong> {{ sell.tag }}</p>#}
+{#
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#{% endblock %}#}
+
 {% extends "base.html" %}
- {% load staticfiles %}
+{% load staticfiles %}
 {% block content %}
 
-
-    <style>
+     <style>
     body {
         background-color: white;
     }
+
+    .list {
+       position: absolute;
+        top:310px;
+        left: 800px;
+        color: red;
+        font-size: large;
+    }
     </style>
 
- <button class="btn btn-default" onclick="location.href='{% url 'new_post' %}'">List an Item</button>
-
-    {% for sell in sell %}
 
 
 
-        <div class="row">
-            <hr>
+  <button class="btn btn-default, list" onclick="location.href='{% url 'new_post' %}'">List an Item</button>
 
-            <div class="col-md-2 col-sm-3 text-center">
-                <a class="story-img" href="#">
-                    <img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-9">
-                <h3>{{ sell.title }}</h3>
-                <div class="row">
-                    <div class="col-xs-9">
-                        <p>{{ sell.content }}</p>
-                        <p><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button></p>
-                        <p>{{ sell.published_date }} | <strong>Views</strong> {{ sell.views }} | <strong>Tag</strong> {{ sell.tag }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th></th>
+                <th>Published date</th>
+                <th>Views</th>
+                <th>Current bid</th>
+                <th></th>
+                <th>End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sell in sell %}
+                <tr>
+                    <td><img height="100" width="100" src="{{ MEDIA_URL }}{{ product.image }}"></td>
+                    <td>{{ sell.title }}</td>
+                    <td>{{ sell.description }}</td>
+                    <td><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button></td>
+                    <td>{{ sell.published_date }}</td>
+                    <td>{{ sell.views }}</td>
+                    <td>{{ sell.current_bid }}</td>
+                    <td><button>Submit Bid</button></td>
+                    {#<td>{{ sell.end_date }}</td>#}
+                </tr>
+{#                 <p><button class="btn btn-default" onclick="location.href={{ sell.id }}">Make a bid</button></p>#}
+           {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

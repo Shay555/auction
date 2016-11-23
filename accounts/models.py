@@ -7,8 +7,7 @@ from django.db import models
 
 # Create your models here.
 class AccountUserManager(UserManager):
-    def _create_user(self, username, email, password,
-                     is_staff, is_superuser, **extra_fields):
+    def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
         """
        Creates and saves a User with the given username, email and password.
        """
