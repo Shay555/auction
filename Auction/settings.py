@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'accounts',
     'django_forms_bootstrap',
     'sell',
+    'paypal_store',
+    'paypal.standard.ipn',
 
 ]
 
@@ -141,4 +143,9 @@ DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_DUxklapdPJcexaEDRghwgRXL')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_S3EoDLaati4950ns1DpwIcfB')
 
+SITE_URL = 'http://127.0.0.1:8080'
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_RECEIVER_EMAIL = 'seamus_woods-facilitator@live.ie'

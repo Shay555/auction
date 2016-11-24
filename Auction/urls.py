@@ -20,6 +20,8 @@ from .settings import MEDIA_ROOT
 from django.contrib.staticfiles import views as static_views
 from Hello import views
 from blog import urls as blog_urls
+from paypal_store import views as paypal_views
+from paypal.standard.ipn import urls as paypal_urls
 #from sell import urls as sell_urls
 #from accounts import urls
 
@@ -40,5 +42,8 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     url(r'', include('accounts.urls')),
     url(r'', include('sell.urls')),
+    url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
+    url(r'^paypal-return/$', paypal_views.paypal_return),
+    url(r'^paypal-cancel/$', paypal_views.paypal_cancel),
 
 ]

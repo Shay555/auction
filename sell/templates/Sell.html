@@ -209,6 +209,8 @@
                 <th>Views</th>
                 <th>Current bid</th>
                 <th></th>
+                <th>Buy it Now Price</th>
+                <th></th>
                 <th>End Date</th>
             </tr>
         </thead>
@@ -217,12 +219,14 @@
                 <tr>
                     <td><img height="100" width="100" src="{{ MEDIA_URL }}{{ product.image }}"></td>
                     <td>{{ sell.title }}</td>
-                    <td>{{ sell.description }}</td>
-                    <td><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button></td>
+                    <td>{{ sell.description }} <br><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button></td>
+                    <td></td>
                     <td>{{ sell.published_date }}</td>
                     <td>{{ sell.views }}</td>
                     <td>{{ sell.current_bid }}</td>
                     <td><button> Submit Bid</button></td>
+                    <td>{{ sell.buy_it_now }}</td>
+                    <td>{{ sell.paypal_form.sandbox }}</td>
                     {#<td>{{ sell.end_date }}</td>#}
                 </tr>
 
