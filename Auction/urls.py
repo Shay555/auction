@@ -43,7 +43,7 @@ urlpatterns = [
     url(r'', include('accounts.urls')),
     url(r'', include('sell.urls')),
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
-    url(r'^paypal-return/$', paypal_views.paypal_return),
-    url(r'^paypal-cancel/$', paypal_views.paypal_cancel),
+    url(r'^paypal-return/', paypal_views.paypal_return),
+    url(r'^paypal-cancel/', paypal_views.paypal_cancel),
 
 ]

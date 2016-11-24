@@ -62,4 +62,4 @@ def logout(request):
     log.info("Handling logout %s request", request.method)
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('index'))
+    return redirect(reverse('home'))

@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'sell',
     'paypal_store',
     'paypal.standard.ipn',
-
 ]
 
 MIDDLEWARE = [

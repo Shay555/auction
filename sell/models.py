@@ -6,6 +6,20 @@ from django.conf import settings
 from paypal.standard.forms import PayPalPaymentsForm
 
 # Create your models here.
+Choice = (
+    ('1', 'Locomotive'),
+    ('2', 'Engine'),
+    ('3', 'Track'),
+    ('4', 'All'),
+)
+
+Duration = (
+    ('1', '1 weak'),
+    ('2', '2 weaks'),
+    ('3', '3 weaks'),
+)
+
+
 class Sell (models.Model):
     author = models.ForeignKey('accounts.User')
     title = models.CharField(max_length=200)
@@ -17,6 +31,8 @@ class Sell (models.Model):
     current_bid = models.IntegerField(default=0)
     buy_it_now = models.IntegerField(default=0)
     end_date = models.DateTimeField
+    choice = models.CharField(default=0, max_length=15, choices=Choice)
+    time = models.CharField(default=0, max_length=10, choices=Duration)
     #current_high_bid = models.IntegerField
 
 
@@ -24,6 +40,20 @@ class Sell (models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    @property
+    def paypal_form(self):
+        paypal_dict = {
+            "business": settings.PAYPAL_RECEIVER_EMAIL,
+            "amount": self.buy_it_now,
+            "currency": "USD",
+            "item_name": self.title,
+            "invoice": "%s-%s" % (self.pk, uuid.uuid4()),
+            "notify_url": settings.PAYPAL_NOTIFY_URL,
+            "return_url": "%s/paypal-return" % settings.SITE_URL,
+            "cancel_return": "%s/paypal-cancel" % settings.SITE_URL
+        }
+
+        return PayPalPaymentsForm(initial=paypal_dict)
 
 
     # def __unicode__(self):
@@ -43,20 +73,6 @@ class Bid (models.Model):
     def __str__(self):
         return self.title
 
-    @property
-    def paypal_form(self):
-        paypal_dict = {
-            "business": settings.PAYPAL_RECEIVER_EMAIL,
-            "amount": self.price,
-            "currency": "USD",
-            "item_name": self.name,
-            "invoice": "%s-%s" % (self.pk, uuid.uuid4()),
-            "notify_url": settings.PAYPAL_NOTIFY_URL,
-            "return_url": "%s/paypal-return" % settings.SITE_URL,
-            "cancel_return": "%s/paypal-cancel" % settings.SITE_URL
-        }
-
-        return PayPalPaymentsForm(initial=paypal_dict)
 
     def __unicode__(self):
         return self.name
