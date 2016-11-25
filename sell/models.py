@@ -33,6 +33,7 @@ class Sell (models.Model):
     end_date = models.DateTimeField
     choice = models.CharField(default=0, max_length=15, choices=Choice)
     time = models.CharField(default=0, max_length=10, choices=Duration)
+    remaining = models.IntegerField(default=0)
     #current_high_bid = models.IntegerField
 
 
