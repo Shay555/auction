@@ -178,6 +178,16 @@
 {% load staticfiles %}
 {% block content %}
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
      <style>
     body {
         background-color: white;
@@ -190,48 +200,76 @@
         color: red;
         font-size: large;
     }
+     h6 {
+         font-weight: bold;
+     }
+     .col-md-4 {
+         border: 5px solid red;
+         text-align: center;
+         color: white;
+         background-color: black;
+     }
     </style>
 
+<br>
+    <br>
 
+  <button class="btn btn-default, list" onclick="location.href='{% url 'new_post' %}'">List an Item<em><i></i></em></button>
 
-
-  <button class="btn btn-default, list" onclick="location.href='{% url 'new_post' %}'">List an Item</button>
-
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th></th>
-                <th>Published date</th>
-                <th>Views</th>
-                <th>Current bid</th>
-                <th></th>
-                <th>Buy it Now Price</th>
-                <th>Buy It Now</th>
-{#                <th>End Date</th>#}
-            </tr>
-        </thead>
-        <tbody>
+            <div class="row">
             {% for sell in sell %}
-                <tr>
-                    <td><img height="100" width="100" src="{{ MEDIA_URL }}{{ sell.image }}"></td>
-                    <td>{{ sell.title }}</td>
-                    <td>{{ sell.description }} <br><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button></td>
-                    <td></td>
-                    <td>{{ sell.published_date }}</td>
-                    <td>{{ sell.views }}</td>
-                    <td>{{ sell.current_bid }}</td>
-                    <td><a href="bid.html"><button> Submit Bid</button></a></td>
-                    <td>{{ sell.buy_it_now }}</td>
-                    <td>{{ sell.paypal_form.sandbox }}</td>
+                <div class="col-md-4">
+                    <div class="Heading">
+                    <h6>Image</h6>
+                    </div>
+                    <div class="data">
+                    <img height="150" width="220" src="{{ MEDIA_URL }}{{ sell.image }}">
+                    </div>
+                    <div class="Heading">
+                        <h6>Title</h6>
+                    </div>
+                    <div class="data">
+                    {{ sell.title }}
+                        </div>
+                    <div class="Heading">
+                        <h6>Description</h6>
+                    </div>
+                    <div class="data">
+                    {{ sell.description }} <br><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button>
+                        </div>
+                    <h6></h6>
+                    <div class="Heading">
+                    <h6>Published Date</h6></div><div class="data">{{ sell.published_date }}</div>
+                        <div class="Heading">
+                        <h6>Views</h6></div>
+                            <div class="data">
+                    {{ sell.views }}
+                                </div>
+                            <div class="Heading">
+                            <h6>Current Bid</h6>
+                                </div>
+                            <div class="data">
+                    {{ sell.current_bid }}
+                                    </div>
+                                <div class="data">
+                    <a href="bid.html"><button> Submit Bid</button></a>
+                                    </div>
+{##}                <div class="Heading">
+                        <h6>Buy it now</h6></div>
+                    <div class="data">
+                    {{ sell.buy_it_now }}</div>
+                    <div class="Heading">
+                    <h6>Buy it now</h6></div>
+                    <div class="data">
+                    {{ sell.paypal_form.sandbox }}</div>
 {#                    <td>{{ sell.end_date }}</td>#}
-                </tr>
+
 
 {#                 <p><button class="btn btn-default" onclick="location.href={{ sell.id }}">Make a bid</button></p>#}
+                </div>
+
+
            {% endfor %}
-        </tbody>
-    </table>
+            </div>
+
 {% endblock %}
