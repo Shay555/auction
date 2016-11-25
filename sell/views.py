@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Sell
 from .forms import SellItemForm
 
+
 # Create your views here.
 def sell_list(request):
 
@@ -28,6 +29,11 @@ def new_post(request):
     else:
         form = SellItemForm()
     return render(request, 'SellItemForm.html', {'form' : form})
+
+
+def Bid(request):
+  return render_to_response('bid.html', {'obj': models.Sell.objects.all()})
+
 
 
 

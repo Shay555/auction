@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<table>
+<tr>
+  <th>author</th>
+  <th>title</th>
+  <th>description</th>
+</tr>
+{% for sell in sell %}
+<tr>
+  <td>{{ sell.author }}</td>
+  <td>{{ sell.title }}</td>
+  <td>{{ sell.description }}</td>
+</tr>
+{% endfor %}
+</table>

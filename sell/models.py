@@ -64,18 +64,18 @@ class Sell (models.Model):
         return self.title
 
 
-class Bid (models.Model):
-    author = models.ForeignKey('accounts.User')
-    title = models.ForeignKey(Sell)
-    description = models.ForeignKey
-    amount = models.IntegerField
-    bid_added = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.title
-
-
-    def __unicode__(self):
-        return self.name
+# class Bid (models.Model):
+#     author = models.ForeignKey('accounts.User')
+#     title = models.ForeignKey(Sell)
+#     # description = models.ForeignKey(Sell)
+#     amount = models.IntegerField
+#     bid_added = models.DateTimeField(auto_now_add=True)
+#
+#     def __str__(self):
+#         return self.title
+#
+#
+#     def __unicode__(self):
+#         return self.name
 
 
