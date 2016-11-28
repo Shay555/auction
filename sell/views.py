@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Sell
 from .forms import SellItemForm
-
+from .forms import UploadFileForms
+from django.shortcuts import render_to_response
 
 # Create your views here.
 def sell_list(request):
@@ -31,8 +32,11 @@ def new_post(request):
     return render(request, 'SellItemForm.html', {'form' : form})
 
 
-def Bid(request):
-  return render_to_response('bid.html', {'obj': models.Sell.objects.all()})
+def bid_item(request):
+  data = Sell.objects.all()
+  return render(request, 'bid.html', {"data": data})
+
+
 
 
 

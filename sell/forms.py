@@ -10,6 +10,12 @@ class SellItemForm(forms.ModelForm):
 
 # class Submit_Bid(forms.ModelForm):
 #     query_results = Sell.objects.all()
-#
+
+
+class UploadFileForms(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms
+
+
 
 

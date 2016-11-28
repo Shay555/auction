@@ -4,12 +4,12 @@ from django.utils import timezone
 import uuid
 from django.conf import settings
 from paypal.standard.forms import PayPalPaymentsForm
-
 # Create your models here.
 Choice = (
     ('1', 'Locomotive'),
     ('2', 'Engine'),
     ('3', 'Track'),
+    ('4', 'Catalogue'),
     ('4', 'All'),
 )
 
@@ -35,6 +35,7 @@ class Sell (models.Model):
     time = models.CharField(default=0, max_length=10, choices=Duration)
     remaining = models.IntegerField(default=0)
     #current_high_bid = models.IntegerField
+
 
 
     def publish(self):
@@ -78,4 +79,9 @@ class Sell (models.Model):
 #     def __unicode__(self):
 #         return self.name
 
+# class Images(models.Model):
+#     sell = models.ForeignKey(Sell, default=None)
 
+class Bid (models.Model):
+    sell = models.ForeignKey(Sell)
+    amount = models.IntegerField(default=0)

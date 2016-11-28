@@ -22,7 +22,7 @@ from Hello import views
 from blog import urls as blog_urls
 from paypal_store import views as paypal_views
 from paypal.standard.ipn import urls as paypal_urls
-#from sell import urls as sell_urls
+# from sell import views as sell_views
 #from accounts import urls
 
 
