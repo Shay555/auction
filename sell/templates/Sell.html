@@ -358,7 +358,8 @@
                         <h6>Description</h6>
                     </div>
                     <div class="data">
-                    {{ sell.description }} <br><button class="btn btn-default" onclick="location.href={{ sell.id }}">Read More</button>
+                    {{ sell.description }} <br><button class="btn btn-default read">Read More</button>
+                        <p style="display: none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias, asperiores assumenda blanditiis dolorem fuga id iusto laboriosam, nesciunt praesentium quibusdam quidem quos repellat saepe sint velit voluptate! Consequuntur, incidunt!</p>
                         </div>
                     <h6></h6>
                     <div class="Heading">
@@ -397,5 +398,11 @@
 
            {% endfor %}
             </div>
+
+    <script>
+    $(".read").click(function () {
+        $("p").show("slow");
+    });
+    </script>
 
 {% endblock %}
