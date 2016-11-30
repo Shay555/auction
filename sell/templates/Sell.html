@@ -227,6 +227,36 @@
          color: red;
 
      }
+     .carousel {
+         background-color: black;
+     }
+     .carousel-caption {
+         color: red;
+         text-align: center;
+         top: 0;
+         bottom: auto;
+     }
+
+     .carousel-caption
+     h3 {
+         color: red;
+     }
+
+     .list {
+         position: absolute;
+         float: left;
+         left: 125px;
+         top: 1280px;
+     }
+
+     .filter {
+         float: right;
+         position: absolute;
+         right: 125px;
+         top: 1280px;
+         color: black;
+     }
+
     </style>
 
       <div class="container">
@@ -249,20 +279,34 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="../static/img/track.jpg" height="400px" width="400px">
+        <div class="carousel-caption">
+            <h3>Marklin track  pieces(x10></h3>
+
+        </div>
+
     </div>
 
     <div class="item">
       <img src="../static/img/shed.jpg" height="400px" width="400px">
+        <div class="carousel-caption">
+            <h3>Marklin shed</h3>
     </div>
+        </div>
 
     <div class="item">
       <img src="../static/img/esso.jpg" height="400px" width="400px">
+        <div class="carousel-caption">
+            <h3>Marklin esso tanker</h3>
     </div>
+        </div>
 
     <div class="item">
         <img src="../static/img/controllers.jpg" height="400px" width="400px">
+        <div class="carousel-caption">
+            <h3>Marklin dual set controllers</h3>
     </div>
   </div>
+        </div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -288,11 +332,19 @@
     </div>
     </div>
 
+    <br>
+    <br>
 
-  <button class="btn btn-default, list" onclick="location.href='{% url 'new_post' %}'">List an Item<em><i></i></em></button>
 
+  <button class="btn btn-lg btn-default btn-outline-primary, list" onclick="location.href='{% url 'new_post' %}'">List an Item<em><i></i></em></button>
+    <button class="btn btn-lg btn-info btn-outline-info, filter">Filter by category<em><i></i></em></button>
+
+
+    <br>
+    <br>
             <div class="row">
             {% for sell in sell %}
+
                 <div class="col-md-4">
                     <div class="Heading">
                     <h6>Image</h6>
@@ -323,7 +375,7 @@
                             <h6>Current Bid</h6>
                                 </div>
                             <div class="data">
-                    {{ sell.current_bid }}
+                    {{ sell.bids.all|length }}
                                     </div>
                                 <div class="data">
                     <a href="bid.html"><button> Submit Bid</button></a>

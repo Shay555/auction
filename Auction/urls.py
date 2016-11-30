@@ -29,7 +29,8 @@ from paypal.standard.ipn import urls as paypal_urls
 
 urlpatterns = [
     url(r'^$', views.get_home, name='home'),
-    url(r'^about/$', views.get_index_1, name='about'),
+    # url(r'^about/$', views.get_index_1, name='about'),
+    # url(r'^about/', include('gallery.urls')),
     #url(r'^sell/$', views.get_Sell, name='sell'),
     url(r'^buy/$', views.get_Buy, name='buy'),
     url(r'^blog/', include(blog_urls)),
@@ -45,5 +46,6 @@ urlpatterns = [
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^paypal-return/', paypal_views.paypal_return),
     url(r'^paypal-cancel/', paypal_views.paypal_cancel),
+    url(r'', include('gallery.urls')),
 
 ]

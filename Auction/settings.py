@@ -48,6 +48,11 @@ INSTALLED_APPS = [
     'sell',
     'paypal_store',
     'paypal.standard.ipn',
+    'debug_toolbar',
+    # 'tinymce',
+    'emoticons',
+    'gallery',
+
 ]
 
 MIDDLEWARE = [
@@ -58,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'Auction.urls'
@@ -136,6 +142,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.js')
 
 DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
 

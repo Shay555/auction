@@ -8,8 +8,8 @@ from django.shortcuts import render_to_response
 # Create your views here.
 def sell_list(request):
 
-    sell = Sell.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, "Sell.html", {'sell':sell})
+    sells = Sell.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, "Sell.html", {'sell':sells})
 
 def item_detail(request, id):
 

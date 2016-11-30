@@ -83,5 +83,5 @@ class Sell (models.Model):
 #     sell = models.ForeignKey(Sell, default=None)
 
 class Bid (models.Model):
-    sell = models.ForeignKey(Sell)
+    sell = models.ForeignKey(Sell, related_name="bids")
     amount = models.IntegerField(default=0)
