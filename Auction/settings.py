@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['train-auction-site.herokuapp.com', '127.0.0.1']
 
 SITE_ID = 1
 
@@ -96,8 +96,8 @@ WSGI_APPLICATION = 'Auction.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #       'ENGINE': 'django.db.backends.sqlite3',
+  #      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
