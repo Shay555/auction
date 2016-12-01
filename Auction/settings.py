@@ -48,10 +48,10 @@ INSTALLED_APPS = [
     'sell',
     'paypal_store',
     'paypal.standard.ipn',
-    'debug_toolbar',
-    # 'tinymce',
-    'emoticons',
-    'gallery',
+    # 'debug_toolbar',
+    # # 'tinymce',
+    # # 'emoticons',
+    # # 'gallery',
 
 ]
 
