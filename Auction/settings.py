@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'paypal_store',
     'paypal.standard.ipn',
     'storages',
+    'gallery'
 
     # 'debug_toolbar',
     # # 'tinymce',
