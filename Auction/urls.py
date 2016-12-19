@@ -24,6 +24,7 @@ from paypal_store import views as paypal_views
 from paypal.standard.ipn import urls as paypal_urls
 # from sell import views as sell_views
 #from accounts import urls
+# from gallery import urls as gallery_urls
 
 
 
@@ -46,7 +47,7 @@ urlpatterns = [
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^paypal-return/', paypal_views.paypal_return),
     url(r'^paypal-cancel/', paypal_views.paypal_cancel),
-     url(r'^gallery/$'),
+    # url(r'^gallery/$', include_urls)
     # url(r'', include('gallery.urls')),
 
 

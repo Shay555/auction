@@ -1,5 +1,5 @@
 .navbar-form input, .form-inline input {
-    width:: auto;
+    width: auto;
 }
 
 body {
@@ -109,8 +109,4 @@ a, a:hover {
     #masthead h1 {
         font-size: 80px;
     }
-}
-
-.policy {
-    background-color: red !important;
 }
