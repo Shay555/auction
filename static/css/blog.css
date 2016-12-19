@@ -110,3 +110,7 @@ a, a:hover {
         font-size: 80px;
     }
 }
+
+.policy {
+    background-color: red !important;
+}
