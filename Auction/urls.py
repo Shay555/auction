@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^blog/', include(blog_urls)),
     url(r'^contact/$',views.get_Contact, name='contact'),
     url(r'^privacy/$',views.get_Privacy, name='privacy'),
+    url(r'^gallery/', views.get_index_1, name='gallery'),
     # url(r'^product/$',views.get_Products, name= 'products' ),
     url(r'^admin/', admin.site.urls),
     #url(r'', include('blog.urls')),
