@@ -42,5 +42,5 @@ class UserRegistrationForm(UserCreationForm):
         return instance
 
 class UserLoginForm(forms.Form):
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField(max_length=50)
+    password = forms.CharField(widget=forms.PasswordInput, max_length=50)
