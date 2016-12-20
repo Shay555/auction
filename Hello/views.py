@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def get_home(request):
-    return render(request, 'Home.html', name='home')
+    return render(request, 'Home.html')
 
 def get_index_1(request):
     return render(request, 'About.html')

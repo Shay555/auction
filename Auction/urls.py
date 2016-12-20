@@ -42,7 +42,7 @@ urlpatterns = [
     url(r'^blog/', include(blog_urls)),
     url(r'^contact/$',views.get_Contact, name='contact'),
     url(r'^privacy/$',views.get_Privacy, name='privacy'),
-    url(r'^product/$',views.get_Products, name= 'products' ),
+    # url(r'^product/$',views.get_Products, name= 'products' ),
     url(r'^admin/', admin.site.urls),
     #url(r'', include('blog.urls')),
     url(r'^static/(?P<path>.*)$', static_views.serve),
