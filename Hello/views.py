@@ -20,7 +20,7 @@ def get_Contact(request):
     return render(request, 'Contact-Us.html')
 
 def get_Privacy(request):
-    return render(request, 'Privacy-Policy.html')
+    return render(request, 'Selling-Policy.html')
 
 # def get_Products(request):
 #     return render(request, 'products.html')
