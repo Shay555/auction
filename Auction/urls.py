@@ -34,7 +34,8 @@ urlpatterns = [
 
 
 
-     url(r'^home/$', views.get_home, name='home'),
+     url(r'^$', views.get_home, name='home'),
+    url(r'^home/$', views.get_home, name='home'),
     # url(r'^about/$', views.get_index_1, name='about'),
     # url(r'^about/', include('gallery.urls')),
     #url(r'^sell/$', views.get_Sell, name='sell'),
