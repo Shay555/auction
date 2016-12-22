@@ -51,8 +51,8 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'storages',
     # 'gallery'
-    'widget_tweaks',
-    'crispy_forms',
+    # 'widget_tweaks',
+    # 'crispy_forms',
 
     # 'debug_toolbar',
     # # 'tinymce',
