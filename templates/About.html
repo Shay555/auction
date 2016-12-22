@@ -187,6 +187,15 @@
         text-align: center;
         color: red;
     }
+    .img {
+        width: 45%;
+        height: auto;
+    }
+
+    .clicked {
+        width: auto;
+    }
+
     </style>
 
 
@@ -205,8 +214,8 @@
 {##}
     <div class="row">
     <div class="col-md-12">
-    <img src="../static/img/gallery1.jpg" width="50%" height="300px">
-    <img src="../static/img/layout-4.jpg" width="50%" height="300px">
+    <img class="img" src="../static/img/gallery1.jpg">
+    <img class="img" src="../static/img/layout-4.jpg">
     </div>
     </div>
     
@@ -231,6 +240,15 @@
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/tm-scripts.js"></script>
 {% endblock %}
+
+
+<script>
+
+    $('img').click(function () {
+        $(this).toggleClass('clicked');
+    });
+
+</script>
 </body>
 </html>
 
