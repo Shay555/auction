@@ -24,7 +24,7 @@ from paypal_store import views as paypal_views
 from paypal.standard.ipn import urls as paypal_urls
 
 urlpatterns = [
-    
+
      url(r'^$', views.get_home, name='home'),
     url(r'^home/$', views.get_home, name='home'),
     url(r'^buy/$', views.get_Buy, name='buy'),
